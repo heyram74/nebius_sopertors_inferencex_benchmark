@@ -71,3 +71,5 @@ The repro has the steps to setup a Nebuis soperators GPU cluster, run two Infere
 
 InferenceX publishes the benchmark results on continous frequency at https://inferencex.semianalysis.com/inference. For this analysis purpose, took the snapshot of the two benchmarks and placed it under the results folder
 
+* Deepseek R1 benchmark numbers closely follow the baseline pattern with throughput numbers around 10% lower
+* gpt_oss120B 8GPU showing very low throughput, interactivity and latency numbers - this might need another rerun of the experiments and deepdive
