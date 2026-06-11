@@ -16,9 +16,28 @@ The repro has the steps to setup a Nebuis soperators GPU cluster, run two Infere
 2. Verify the cluster health by running nccl tests from /opt/slurm-test/quickcheck. Verify the all-reduce-perf BW is matching the Nvidia published numbers.
    - The [nccl_results](https://github.com/heyram74/nebuis-sopertors-inferencex-benchmark/tree/main/results/nccl_results) folder has all the resuts from the demo cluster
   
-3. SSH to the login node and verify the file system and its allocated size. The high speed nfs should show up as one file mount as /home. This will be used to store all the artifacts of this experiments.
+3. SSH to the login node and verify the file system and its allocated size. Below is the snapshot from the demo cluster
+    ~~~
+    # df -h
+    Filesystem                                                                         Size  Used Avail Use% Mounted on
+    jail                                                                               512G  243G  270G  48% /
+    ....
+    nfs-server.nfs-system.svc.cluster.local:/pvc-ac42b148-5376-4c66-a286-0d148fb5f45a  3.6T  1.1T  2.6T  30% /home
+    ....
+    jail-submount-data                                                                 512G     0  512G   0% /mnt/data
+    ~~~
+  
+  The high speed nfs should show up as one file mount as /home. This will be used to store all the artifacts of this experiments. Below is the folder structure used for this experiment.
+    ~~~
+    /home/InferenceX
+    /home/cache
+    /home/containers
+    /home/models
+    /home/results
+    /home/scripts
+    ~~~
 
-4. clone [InferenceX](https://github.com/SemiAnalysisAI/InferenceX.git) into /home/InferenceX
+4. Clone [InferenceX](https://github.com/SemiAnalysisAI/InferenceX.git) into /home/InferenceX
   
 5. Download the models to /home/models folder
 
