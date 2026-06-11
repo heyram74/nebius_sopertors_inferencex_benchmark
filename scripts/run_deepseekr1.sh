@@ -43,7 +43,7 @@ IMAGE="lmsysorg/sglang:v0.5.12-cu130"
 # Path where the enroot squashfs image will be cached on shared storage.
 # Avoids re-pulling on every run.
 SQUASH_DIR="/home/containers"
-SQUASH_FILE="${SQUASH_DIR}/sglang:v0.5.12-cu130.sqsh"
+SQUASH_FILE="${SQUASH_DIR}/sglang.v0.5.12-cu130.sqsh"
 
 # ── Benchmark parameters ──────────────────────────────────────────────────────
 export PORT=8000
@@ -57,7 +57,7 @@ export RUN_EVAL=false          # set true to also run lm-eval accuracy checks
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Where result JSONs will be written (must be writable inside the container).
-WORKSPACE="/home/results/deepseekr1_h200_sglang5.12/$RESULT_FILENAME"
+WORKSPACE="/home/results/deepseekr1_h200_sglang5.12_sweep1/$RESULT_FILENAME"
 CACHE_DIR="/home/.cahce"
 
 echo "==> Job $SLURM_JOB_ID on node $SLURMD_NODENAME"
