@@ -1,0 +1,341 @@
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:344] 
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:344]        █     █     █▄   ▄█
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:344]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.22.1
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:344]   █▄█▀ █     █     █     █  model   /home/models/openai--gpt-oss-120b
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:344]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:344] 
+(APIServer pid=415968) INFO 06-10 21:34:53 [utils.py:278] non-default args: {'model_tag': '/home/models/openai--gpt-oss-120b', 'host': '0.0.0.0', 'model': '/home/models/openai--gpt-oss-120b', 'max_model_len': 2068, 'tensor_parallel_size': 8, 'gpu_memory_utilization': 0.9, 'enable_prefix_caching': False, 'max_num_batched_tokens': 8192, 'max_num_seqs': 4, 'max_cudagraph_capture_size': 2048}
+(APIServer pid=415968) WARNING 06-10 21:34:53 [envs.py:2057] Unknown vLLM environment variable detected: VLLM_BUILD_URL
+(APIServer pid=415968) WARNING 06-10 21:34:53 [envs.py:2057] Unknown vLLM environment variable detected: VLLM_IMAGE_TAG
+(APIServer pid=415968) WARNING 06-10 21:34:53 [envs.py:2057] Unknown vLLM environment variable detected: VLLM_BUILD_PIPELINE
+(APIServer pid=415968) WARNING 06-10 21:34:53 [envs.py:2057] Unknown vLLM environment variable detected: VLLM_BUILD_COMMIT
+(APIServer pid=415968) INFO 06-10 21:35:27 [model.py:617] Resolved architecture: GptOssForCausalLM
+(APIServer pid=415968) INFO 06-10 21:35:27 [model.py:1752] Using max model len 2068
+(APIServer pid=415968) INFO 06-10 21:35:29 [scheduler.py:239] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(APIServer pid=415968) INFO 06-10 21:35:29 [vllm.py:977] Asynchronous scheduling is enabled.
+(APIServer pid=415968) INFO 06-10 21:35:29 [kernel.py:270] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(APIServer pid=415968) INFO 06-10 21:35:29 [compilation.py:312] Enabled custom fusions: allreduce_rms
+(EngineCore pid=416113) INFO 06-10 21:35:57 [core.py:112] Initializing a V1 LLM engine (v0.22.1) with config: model='/home/models/openai--gpt-oss-120b', speculative_config=None, tokenizer='/home/models/openai--gpt-oss-120b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=2068, download_dir=None, load_format=auto, tensor_parallel_size=8, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=gpt_oss_mxfp4, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='openai_gptoss', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/home/models/openai--gpt-oss-120b, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::qwen_gdn_attention_core', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [91, 8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512, 528, 544, 560, 576, 592, 608, 624, 640, 656, 672, 688, 704, 720, 736, 752, 768, 784, 800, 816, 832, 848, 864, 880, 896, 912, 928, 944, 960, 976, 992, 1008, 1024, 1040, 1056, 1072, 1088, 1104, 1120, 1136, 1152, 1168, 1184, 1200, 1216, 1232, 1248, 1264, 1280, 1296, 1312, 1328, 1344, 1360, 1376, 1392, 1408, 1424, 1440, 1456, 1472, 1488, 1504, 1520, 1536, 1552, 1568, 1584, 1600, 1616, 1632, 1648, 1664, 1680, 1696, 1712, 1728, 1744, 1760, 1776, 1792, 1808, 1824, 1840, 1856, 1872, 1888, 1904, 1920, 1936, 1952, 1968, 1984, 2000, 2016, 2032, 2048], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': True, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 2048, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native']), enable_flashinfer_autotune=True, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=416113) WARNING 06-10 21:35:57 [multiproc_executor.py:1029] Reducing Torch parallelism from 2 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore pid=416113) INFO 06-10 21:35:57 [multiproc_executor.py:139] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.24.3.204 (local), world_size=8, local_world_size=8
+(Worker pid=416148) INFO 06-10 21:37:40 [parallel_state.py:1422] world_size=8 rank=6 local_rank=6 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416149) INFO 06-10 21:37:40 [parallel_state.py:1422] world_size=8 rank=7 local_rank=7 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416142) INFO 06-10 21:37:43 [parallel_state.py:1422] world_size=8 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416144) INFO 06-10 21:37:45 [parallel_state.py:1422] world_size=8 rank=2 local_rank=2 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416146) INFO 06-10 21:37:45 [parallel_state.py:1422] world_size=8 rank=4 local_rank=4 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416147) INFO 06-10 21:37:45 [parallel_state.py:1422] world_size=8 rank=5 local_rank=5 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416145) INFO 06-10 21:37:45 [parallel_state.py:1422] world_size=8 rank=3 local_rank=3 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416143) INFO 06-10 21:37:45 [parallel_state.py:1422] world_size=8 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:42259 backend=nccl
+(Worker pid=416142) INFO 06-10 21:37:46 [pynccl.py:113] vLLM is using nccl==2.28.9
+(Worker pid=416142) INFO 06-10 21:37:53 [cuda_communicator.py:232] Using ['CUSTOM', 'SYMM_MEM', 'PYNCCL'] all-reduce backends (in dispatch order) for group 'tp:0' out of potential backends: ['NCCL_SYMM_MEM', 'QUICK_REDUCE', 'FLASHINFER', 'CUSTOM', 'SYMM_MEM', 'PYNCCL'].
+(Worker pid=416142) INFO 06-10 21:37:56 [cuda_communicator.py:232] Using ['PYNCCL'] all-reduce backends (in dispatch order) for group 'ep:0' out of potential backends: ['NCCL_SYMM_MEM', 'QUICK_REDUCE', 'FLASHINFER', 'CUSTOM', 'SYMM_MEM', 'PYNCCL'].
+(Worker pid=416142) INFO 06-10 21:37:56 [parallel_state.py:1735] rank 0 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0, EPLB rank N/A
+(Worker pid=416142) INFO 06-10 21:37:59 [topk_topp_sampler.py:45] Using FlashInfer for top-p & top-k sampling.
+(Worker_TP0 pid=416142) INFO 06-10 21:38:00 [gpu_model_runner.py:5037] Starting to load model /home/models/openai--gpt-oss-120b...
+(Worker_TP2 pid=416144) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP2 pid=416144)   return environment_variables[name]()
+(Worker_TP5 pid=416147) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP5 pid=416147)   return environment_variables[name]()
+(Worker_TP7 pid=416149) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP7 pid=416149)   return environment_variables[name]()
+(Worker_TP3 pid=416145) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP3 pid=416145)   return environment_variables[name]()
+(Worker_TP0 pid=416142) INFO 06-10 21:38:02 [cuda.py:378] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'TRITON_ATTN'].
+(Worker_TP0 pid=416142) INFO 06-10 21:38:02 [flash_attn.py:636] Using FlashAttention version 3
+(Worker_TP1 pid=416143) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP1 pid=416143)   return environment_variables[name]()
+(Worker_TP0 pid=416142) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP0 pid=416142)   return environment_variables[name]()
+(Worker_TP6 pid=416148) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP6 pid=416148)   return environment_variables[name]()
+(Worker_TP0 pid=416142) INFO 06-10 21:38:02 [mxfp4.py:381] Using 'MARLIN' Mxfp4 MoE backend.
+(Worker_TP4 pid=416146) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP4 pid=416146)   return environment_variables[name]()
+(Worker_TP6 pid=416148) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP7 pid=416149) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP3 pid=416145) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP4 pid=416146) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP2 pid=416144) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP0 pid=416142) INFO 06-10 21:38:04 [weight_utils.py:922] Filesystem type for checkpoints: NFS4. Checkpoint size: 60.77 GiB. Available RAM: 1540.86 GiB.
+(Worker_TP0 pid=416142) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:   0% Completed | 0/15 [00:00<?, ?it/s]
+(Worker_TP1 pid=416143) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP5 pid=416147) INFO 06-10 21:38:04 [weight_utils.py:884] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:   7% Completed | 1/15 [00:11<02:42, 11.60s/it]
+(Worker_TP0 pid=416142) INFO 06-10 21:38:17 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP6 pid=416148) INFO 06-10 21:38:23 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  13% Completed | 2/15 [00:18<01:56,  8.99s/it]
+(Worker_TP7 pid=416149) INFO 06-10 21:38:23 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/1)
+(Worker_TP7 pid=416149) INFO 06-10 21:38:23 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 19.39s
+(Worker_TP1 pid=416143) INFO 06-10 21:38:23 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP3 pid=416145) INFO 06-10 21:38:24 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP4 pid=416146) INFO 06-10 21:38:24 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP3 pid=416145) INFO 06-10 21:38:24 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP5 pid=416147) INFO 06-10 21:38:24 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP3 pid=416145) INFO 06-10 21:38:24 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 19.78s
+(Worker_TP1 pid=416143) INFO 06-10 21:38:24 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP1 pid=416143) INFO 06-10 21:38:24 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 19.77s
+(Worker_TP6 pid=416148) INFO 06-10 21:38:25 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP6 pid=416148) INFO 06-10 21:38:25 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 21.36s
+(Worker_TP2 pid=416144) INFO 06-10 21:38:25 [weight_utils.py:856] Prefetching checkpoint files: 10% (1/2)
+(Worker_TP0 pid=416142) INFO 06-10 21:38:25 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP0 pid=416142) INFO 06-10 21:38:25 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 21.33s
+(Worker_TP4 pid=416146) INFO 06-10 21:38:25 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP4 pid=416146) INFO 06-10 21:38:25 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 21.44s
+(Worker_TP2 pid=416144) INFO 06-10 21:38:26 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP2 pid=416144) INFO 06-10 21:38:26 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 21.44s
+(Worker_TP5 pid=416147) INFO 06-10 21:38:26 [weight_utils.py:856] Prefetching checkpoint files: 20% (2/2)
+(Worker_TP5 pid=416147) INFO 06-10 21:38:26 [weight_utils.py:879] Prefetching checkpoint files into page cache finished in 21.36s
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  20% Completed | 3/15 [00:22<01:18,  6.53s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  27% Completed | 4/15 [00:24<00:52,  4.78s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  33% Completed | 5/15 [00:26<00:38,  3.87s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  40% Completed | 6/15 [00:28<00:29,  3.27s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  47% Completed | 7/15 [00:31<00:23,  2.93s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  53% Completed | 8/15 [00:33<00:18,  2.66s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  60% Completed | 9/15 [00:35<00:14,  2.49s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  67% Completed | 10/15 [00:37<00:11,  2.35s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  73% Completed | 11/15 [00:39<00:09,  2.30s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  80% Completed | 12/15 [00:41<00:06,  2.22s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  87% Completed | 13/15 [00:42<00:03,  1.88s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards:  93% Completed | 14/15 [00:44<00:01,  1.96s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards: 100% Completed | 15/15 [00:46<00:00,  1.99s/it]
+(Worker_TP0 pid=416142) Loading safetensors checkpoint shards: 100% Completed | 15/15 [00:46<00:00,  3.12s/it]
+(Worker_TP0 pid=416142) 
+(Worker_TP0 pid=416142) INFO 06-10 21:38:51 [default_loader.py:397] Loading weights took 46.92 seconds
+(Worker_TP0 pid=416142) INFO 06-10 21:38:51 [mxfp4.py:1695] Using MoEPrepareAndFinalizeNoDPEPModular
+(Worker_TP0 pid=416142) INFO 06-10 21:39:05 [gpu_model_runner.py:5132] Model loading took 8.66 GiB memory and 59.818495 seconds
+(Worker_TP7 pid=416149) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP7 pid=416149)   raw = getter()
+(Worker_TP4 pid=416146) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP4 pid=416146)   raw = getter()
+(Worker_TP2 pid=416144) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP2 pid=416144)   raw = getter()
+(Worker_TP3 pid=416145) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP3 pid=416145)   raw = getter()
+(Worker_TP5 pid=416147) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP5 pid=416147)   raw = getter()
+(Worker_TP6 pid=416148) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP6 pid=416148)   raw = getter()
+(Worker_TP1 pid=416143) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP1 pid=416143)   raw = getter()
+(Worker_TP0 pid=416142) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP0 pid=416142)   raw = getter()
+(Worker_TP6 pid=416148) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP6 pid=416148)   raw = getter()
+(Worker_TP3 pid=416145) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP3 pid=416145)   raw = getter()
+(Worker_TP1 pid=416143) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP1 pid=416143)   raw = getter()
+(Worker_TP7 pid=416149) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP7 pid=416149)   raw = getter()
+(Worker_TP2 pid=416144) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP2 pid=416144)   raw = getter()
+(Worker_TP4 pid=416146) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP4 pid=416146)   raw = getter()
+(Worker_TP5 pid=416147) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP5 pid=416147)   raw = getter()
+(Worker_TP0 pid=416142) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:2141: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(Worker_TP0 pid=416142)   raw = getter()
+(Worker_TP0 pid=416142) INFO 06-10 21:39:50 [backends.py:1089] Using cache directory: /root/.cache/vllm/torch_compile_cache/b15cb2b043/rank_0_0/backbone for vLLM's torch.compile
+(Worker_TP0 pid=416142) INFO 06-10 21:39:50 [backends.py:1148] Dynamo bytecode transform time: 43.29 s
+(Worker_TP0 pid=416142) INFO 06-10 21:39:50 [flashinfer_all_reduce.py:111] Auto-selected flashinfer allreduce backend: trtllm
+(Worker_TP0 pid=416142) /usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+(Worker_TP0 pid=416142)   return func(*args, **kwargs)
+[rank0]:[W610 21:39:51.754057303 ProcessGroupNCCL.cpp:5188] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+(Worker_TP0 pid=416142) INFO 06-10 21:39:54 [flashinfer_all_reduce.py:151] Initialized FlashInfer Allreduce norm fusion workspace with backend=trtllm
+(EngineCore pid=416113) INFO 06-10 21:40:06 [shm_broadcast.py:698] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(Worker_TP0 pid=416142) INFO 06-10 21:40:22 [backends.py:378] Cache the graph of compile range (1, 91) for later use
+(Worker_TP0 pid=416142) INFO 06-10 21:40:33 [backends.py:378] Cache the graph of compile range (92, 8192) for later use
+(EngineCore pid=416113) INFO 06-10 21:41:06 [shm_broadcast.py:698] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(Worker_TP0 pid=416142) INFO 06-10 21:41:13 [backends.py:393] Compiling a graph for compile range (1, 91) takes 51.20 s
+(Worker_TP0 pid=416142) INFO 06-10 21:41:18 [backends.py:393] Compiling a graph for compile range (92, 8192) takes 55.96 s
+(EngineCore pid=416113) INFO 06-10 21:42:06 [shm_broadcast.py:698] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(Worker_TP0 pid=416142) INFO 06-10 21:42:08 [decorators.py:708] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/5499fb7237db5f509f321c13b389951c8ad1025ddc1b1a545939892a9178630c/rank_0_0/model
+(Worker_TP0 pid=416142) INFO 06-10 21:42:08 [monitor.py:53] torch.compile took 180.62 s in total
+(EngineCore pid=416113) INFO 06-10 21:43:06 [shm_broadcast.py:698] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(Worker_TP0 pid=416142) INFO 06-10 21:43:57 [monitor.py:81] Initial profiling/warmup run took 109.37 s
+(Worker_TP0 pid=416142) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP5 pid=416147) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP2 pid=416144) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP7 pid=416149) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP4 pid=416146) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP6 pid=416148) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP3 pid=416145) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP1 pid=416143) INFO 06-10 21:44:00 [gpu_model_runner.py:6279] Profiling CUDA graph memory: PIECEWISE=147 (largest=2048), FULL=3 (largest=4)
+(Worker_TP2 pid=416144) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP3 pid=416145) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP4 pid=416146) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP1 pid=416143) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP6 pid=416148) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP5 pid=416147) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP7 pid=416149) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(Worker_TP0 pid=416142) INFO 06-10 21:44:06 [custom_all_reduce.py:215] Registering 72 cuda graph addresses
+(EngineCore pid=416113) INFO 06-10 21:44:06 [shm_broadcast.py:698] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(Worker_TP4 pid=416146) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP7 pid=416149) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP6 pid=416148) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP2 pid=416144) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP1 pid=416143) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP5 pid=416147) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP0 pid=416142) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP3 pid=416145) INFO 06-10 21:44:11 [gpu_model_runner.py:6365] Estimated CUDA graph memory: 1.00 GiB total
+(Worker_TP2 pid=416144) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP7 pid=416149) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP5 pid=416147) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP4 pid=416146) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP1 pid=416143) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP3 pid=416145) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP6 pid=416148) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(Worker_TP0 pid=416142) INFO 06-10 21:44:14 [gpu_worker.py:466] Available KV cache memory: 114.85 GiB
+(Worker_TP0 pid=416142) INFO 06-10 21:44:14 [gpu_worker.py:481] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8929 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9071. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(EngineCore pid=416113) INFO 06-10 21:44:14 [kv_cache_utils.py:1733] GPU KV cache size: 13,253,265 tokens
+(EngineCore pid=416113) INFO 06-10 21:44:14 [kv_cache_utils.py:1734] Maximum concurrency for 2,068 tokens per request: 6408.74x
+(Worker_TP2 pid=416144) 2026-06-10 21:44:14,874 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP0 pid=416142) 2026-06-10 21:44:14,876 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP5 pid=416147) 2026-06-10 21:44:14,877 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP6 pid=416148) 2026-06-10 21:44:14,887 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP1 pid=416143) 2026-06-10 21:44:14,887 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP3 pid=416145) 2026-06-10 21:44:14,890 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP7 pid=416149) 2026-06-10 21:44:14,892 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP4 pid=416146) 2026-06-10 21:44:14,909 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(Worker_TP0 pid=416142) 2026-06-10 21:44:15,112 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP2 pid=416144) 2026-06-10 21:44:15,114 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP3 pid=416145) 2026-06-10 21:44:15,134 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP5 pid=416147) 2026-06-10 21:44:15,136 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP7 pid=416149) 2026-06-10 21:44:15,141 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP6 pid=416148) 2026-06-10 21:44:15,151 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP4 pid=416146) 2026-06-10 21:44:15,158 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP1 pid=416143) 2026-06-10 21:44:15,163 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(Worker_TP0 pid=416142) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/147 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   1%|          | 1/147 [00:00<01:20,  1.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   1%|▏         | 2/147 [00:01<01:23,  1.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   2%|▏         | 3/147 [00:01<01:19,  1.80it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   3%|▎         | 4/147 [00:02<01:25,  1.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   3%|▎         | 5/147 [00:02<01:25,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 6/147 [00:03<01:22,  1.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   5%|▍         | 7/147 [00:04<01:22,  1.70it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   5%|▌         | 8/147 [00:04<01:21,  1.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 9/147 [00:05<01:22,  1.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   7%|▋         | 10/147 [00:06<01:28,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   7%|▋         | 11/147 [00:06<01:29,  1.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 12/147 [00:07<01:27,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   9%|▉         | 13/147 [00:07<01:24,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  10%|▉         | 14/147 [00:08<01:21,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  10%|█         | 15/147 [00:09<01:21,  1.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  11%|█         | 16/147 [00:09<01:19,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 17/147 [00:10<01:19,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 18/147 [00:10<01:18,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  13%|█▎        | 19/147 [00:11<01:16,  1.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  14%|█▎        | 20/147 [00:12<01:16,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  14%|█▍        | 21/147 [00:12<01:15,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  15%|█▍        | 22/147 [00:13<01:12,  1.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 23/147 [00:13<01:16,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▋        | 24/147 [00:14<01:15,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  17%|█▋        | 25/147 [00:15<01:14,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 26/147 [00:15<01:15,  1.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 27/147 [00:16<01:14,  1.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  19%|█▉        | 28/147 [00:16<01:10,  1.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|█▉        | 29/147 [00:17<01:11,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|██        | 30/147 [00:18<01:09,  1.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  21%|██        | 31/147 [00:18<01:09,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 32/147 [00:19<01:09,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 33/147 [00:19<01:07,  1.70it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  23%|██▎       | 34/147 [00:20<01:08,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▍       | 35/147 [00:21<01:08,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▍       | 36/147 [00:21<01:06,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  25%|██▌       | 37/147 [00:22<01:05,  1.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  26%|██▌       | 38/147 [00:23<01:06,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 39/147 [00:23<01:05,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 40/147 [00:24<01:05,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  28%|██▊       | 41/147 [00:24<01:04,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▊       | 42/147 [00:25<01:03,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 43/147 [00:26<01:02,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  30%|██▉       | 44/147 [00:26<01:03,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███       | 45/147 [00:27<01:02,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 46/147 [00:27<01:01,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  32%|███▏      | 47/147 [00:28<01:01,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 48/147 [00:29<01:00,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 49/147 [00:29<00:59,  1.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  34%|███▍      | 50/147 [00:30<00:59,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▍      | 51/147 [00:31<01:00,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 52/147 [00:31<00:59,  1.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  36%|███▌      | 53/147 [00:32<00:57,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 54/147 [00:32<00:57,  1.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 55/147 [00:33<00:55,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  38%|███▊      | 56/147 [00:34<00:55,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 57/147 [00:34<00:55,  1.61it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 58/147 [00:35<00:57,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  40%|████      | 59/147 [00:36<00:57,  1.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 60/147 [00:36<00:58,  1.48it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████▏     | 61/147 [00:37<00:56,  1.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  42%|████▏     | 62/147 [00:38<00:54,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  43%|████▎     | 63/147 [00:38<00:53,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  44%|████▎     | 64/147 [00:39<00:52,  1.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  44%|████▍     | 65/147 [00:39<00:50,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▍     | 66/147 [00:40<00:51,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  46%|████▌     | 67/147 [00:41<00:49,  1.61it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  46%|████▋     | 68/147 [00:41<00:50,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 69/147 [00:42<00:51,  1.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  48%|████▊     | 70/147 [00:43<00:49,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  48%|████▊     | 71/147 [00:43<00:48,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  49%|████▉     | 72/147 [00:44<00:47,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  50%|████▉     | 73/147 [00:45<00:47,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  50%|█████     | 74/147 [00:45<00:46,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 75/147 [00:46<00:44,  1.61it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  52%|█████▏    | 76/147 [00:46<00:45,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  52%|█████▏    | 77/147 [00:47<00:44,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 78/147 [00:48<00:44,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  54%|█████▎    | 79/147 [00:48<00:42,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  54%|█████▍    | 80/147 [00:49<00:42,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▌    | 81/147 [00:50<00:42,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  56%|█████▌    | 82/147 [00:50<00:40,  1.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  56%|█████▋    | 83/147 [00:51<00:41,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 84/147 [00:52<00:41,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  58%|█████▊    | 85/147 [00:52<00:39,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▊    | 86/147 [00:53<00:39,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 87/147 [00:53<00:38,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  60%|█████▉    | 88/147 [00:54<00:37,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  61%|██████    | 89/147 [00:55<00:36,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  61%|██████    | 90/147 [00:55<00:35,  1.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  62%|██████▏   | 91/147 [00:56<00:35,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 92/147 [00:57<00:33,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 93/147 [00:57<00:34,  1.56it/s](EngineCore pid=416113) INFO 06-10 21:45:15 [shm_broadcast.py:698] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  64%|██████▍   | 94/147 [00:58<00:33,  1.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 95/147 [00:59<00:33,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▌   | 96/147 [00:59<00:32,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  66%|██████▌   | 97/147 [01:00<00:32,  1.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 98/147 [01:00<00:31,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 99/147 [01:01<00:30,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  68%|██████▊   | 100/147 [01:02<00:30,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  69%|██████▊   | 101/147 [01:02<00:29,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  69%|██████▉   | 102/147 [01:03<00:29,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  70%|███████   | 103/147 [01:04<00:27,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 104/147 [01:04<00:27,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████▏  | 105/147 [01:05<00:27,  1.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  72%|███████▏  | 106/147 [01:06<00:27,  1.49it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 107/147 [01:06<00:27,  1.46it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 108/147 [01:07<00:26,  1.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  74%|███████▍  | 109/147 [01:08<00:24,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 110/147 [01:08<00:23,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▌  | 111/147 [01:09<00:22,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▌  | 112/147 [01:10<00:22,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  77%|███████▋  | 113/147 [01:10<00:21,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 114/147 [01:11<00:20,  1.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 115/147 [01:11<00:20,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  79%|███████▉  | 116/147 [01:12<00:19,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|███████▉  | 117/147 [01:13<00:19,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|████████  | 118/147 [01:13<00:18,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  81%|████████  | 119/147 [01:14<00:18,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 120/147 [01:15<00:17,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 121/147 [01:15<00:17,  1.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  83%|████████▎ | 122/147 [01:16<00:16,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▎ | 123/147 [01:17<00:15,  1.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▍ | 124/147 [01:17<00:14,  1.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  85%|████████▌ | 125/147 [01:18<00:14,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▌ | 126/147 [01:19<00:13,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 127/147 [01:19<00:12,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  87%|████████▋ | 128/147 [01:20<00:12,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 129/147 [01:20<00:11,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 130/147 [01:21<00:10,  1.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  89%|████████▉ | 131/147 [01:22<00:10,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  90%|████████▉ | 132/147 [01:22<00:09,  1.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  90%|█████████ | 133/147 [01:23<00:08,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  91%|█████████ | 134/147 [01:24<00:08,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  92%|█████████▏| 135/147 [01:24<00:07,  1.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  93%|█████████▎| 136/147 [01:25<00:06,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  93%|█████████▎| 137/147 [01:26<00:06,  1.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 138/147 [01:26<00:05,  1.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  95%|█████████▍| 139/147 [01:27<00:05,  1.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  95%|█████████▌| 140/147 [01:27<00:04,  1.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  96%|█████████▌| 141/147 [01:28<00:03,  1.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  97%|█████████▋| 142/147 [01:29<00:03,  1.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  97%|█████████▋| 143/147 [01:29<00:02,  1.61it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  98%|█████████▊| 144/147 [01:30<00:01,  1.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  99%|█████████▊| 145/147 [01:30<00:01,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  99%|█████████▉| 146/147 [01:31<00:00,  1.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 147/147 [01:32<00:00,  1.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 147/147 [01:32<00:00,  1.59it/s]
+(Worker_TP0 pid=416142) Capturing CUDA graphs (decode, FULL):   0%|          | 0/3 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 1/3 [00:00<00:00,  2.08it/s]Capturing CUDA graphs (decode, FULL):  67%|██████▋   | 2/3 [00:00<00:00,  2.05it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 3/3 [00:01<00:00,  2.05it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 3/3 [00:01<00:00,  2.06it/s]
+(Worker_TP4 pid=416146) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP0 pid=416142) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP6 pid=416148) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP7 pid=416149) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP1 pid=416143) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP2 pid=416144) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP3 pid=416145) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP5 pid=416147) INFO 06-10 21:45:51 [custom_all_reduce.py:215] Registering 396 cuda graph addresses
+(Worker_TP1 pid=416143) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP3 pid=416145) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP2 pid=416144) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP5 pid=416147) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP0 pid=416142) INFO 06-10 21:45:54 [gpu_model_runner.py:6456] Graph capturing finished in 99 secs, took 0.99 GiB
+(Worker_TP0 pid=416142) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP4 pid=416146) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP6 pid=416148) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP7 pid=416149) INFO 06-10 21:45:54 [gpu_worker.py:619] CUDA graph pool memory: 0.99 GiB (actual), 1.0 GiB (estimated), difference: 0.01 GiB (0.6%).
+(Worker_TP2 pid=416144) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP3 pid=416145) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP1 pid=416143) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP5 pid=416147) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP4 pid=416146) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP0 pid=416142) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP6 pid=416148) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(Worker_TP7 pid=416149) INFO 06-10 21:45:54 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(EngineCore pid=416113) INFO 06-10 21:45:54 [core.py:302] init engine (profile, create kv cache, warmup model) took 409.11 s (compilation: 183.85 s)
+(EngineCore pid=416113) /usr/local/lib/python3.12/dist-packages/vllm/envs.py:1996: FutureWarning: VLLM_MXFP4_USE_MARLIN is deprecated and will be removed in v0.23. Use --moe-backend marlin or --linear-backend marlin.
+(EngineCore pid=416113)   return environment_variables[name]()
+(EngineCore pid=416113) INFO 06-10 21:45:59 [vllm.py:977] Asynchronous scheduling is enabled.
+(EngineCore pid=416113) INFO 06-10 21:45:59 [kernel.py:270] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(EngineCore pid=416113) INFO 06-10 21:45:59 [compilation.py:312] Enabled custom fusions: allreduce_rms
+(APIServer pid=415968) INFO 06-10 21:45:59 [api_server.py:592] Supported tasks: ['generate']
+(APIServer pid=415968) WARNING 06-10 21:46:00 [serving.py:220] For gpt-oss, we ignore --enable-auto-tool-choice and always enable tool use.
+(APIServer pid=415968) INFO 06-10 21:46:04 [hf.py:488] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(APIServer pid=415968) INFO 06-10 21:46:04 [api_server.py:596] Starting vLLM server on http://0.0.0.0:8000
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:37] Available routes are:
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /tokenize, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /detokenize, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /load, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /version, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /health, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /metrics, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/models, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /ping, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /ping, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /invocations, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/chat/completions/batch, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/responses, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/completions, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/messages, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/messages/count_tokens, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /generative_scoring, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+(APIServer pid=415968) INFO 06-10 21:46:04 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+(APIServer pid=415968) INFO:     Started server process [415968]
+(APIServer pid=415968) INFO:     Waiting for application startup.
+(APIServer pid=415968) INFO:     Application startup complete.
+(APIServer pid=415968) INFO:     127.0.0.1:42740 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39450 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39452 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39454 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39456 - "POST /v1/completions HTTP/1.1" 200 OK
+(Worker_TP0 pid=416142) WARNING 06-10 21:46:34 [jit_monitor.py:103] Triton kernel JIT compilation during inference: _compute_slot_mapping_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=415968) INFO 06-10 21:46:44 [loggers.py:271] Engine 000: Avg prompt throughput: 396.3 tokens/s, Avg generation throughput: 269.9 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:34810 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:34824 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:34828 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:34840 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:46:54 [loggers.py:271] Engine 000: Avg prompt throughput: 396.3 tokens/s, Avg generation throughput: 253.7 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:49102 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:49104 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:49114 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:49122 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:47:04 [loggers.py:271] Engine 000: Avg prompt throughput: 380.2 tokens/s, Avg generation throughput: 342.7 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:36328 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:36338 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:36346 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:36354 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:47:14 [loggers.py:271] Engine 000: Avg prompt throughput: 364.9 tokens/s, Avg generation throughput: 347.9 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:36212 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:36224 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:36226 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:36240 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:47:24 [loggers.py:271] Engine 000: Avg prompt throughput: 349.0 tokens/s, Avg generation throughput: 344.1 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:50086 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:50096 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:50100 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:50110 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:47:34 [loggers.py:271] Engine 000: Avg prompt throughput: 375.5 tokens/s, Avg generation throughput: 348.3 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:56618 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:56620 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:56632 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39502 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:47:44 [loggers.py:271] Engine 000: Avg prompt throughput: 366.3 tokens/s, Avg generation throughput: 340.2 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:39512 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39516 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:39532 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:47:54 [loggers.py:271] Engine 000: Avg prompt throughput: 272.8 tokens/s, Avg generation throughput: 334.2 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:57454 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:57462 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:57464 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:44810 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:48:04 [loggers.py:271] Engine 000: Avg prompt throughput: 358.1 tokens/s, Avg generation throughput: 331.4 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:44820 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:44826 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:44830 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:48:14 [loggers.py:271] Engine 000: Avg prompt throughput: 284.8 tokens/s, Avg generation throughput: 335.0 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:42072 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:42088 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:42100 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:56370 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:48:24 [loggers.py:271] Engine 000: Avg prompt throughput: 382.3 tokens/s, Avg generation throughput: 341.5 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:56386 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:56402 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:56416 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:44784 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:48:34 [loggers.py:271] Engine 000: Avg prompt throughput: 377.4 tokens/s, Avg generation throughput: 337.2 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+(APIServer pid=415968) INFO:     127.0.0.1:44794 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO:     127.0.0.1:44800 - "POST /v1/completions HTTP/1.1" 200 OK
+(APIServer pid=415968) INFO 06-10 21:48:44 [loggers.py:271] Engine 000: Avg prompt throughput: 194.7 tokens/s, Avg generation throughput: 339.4 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%

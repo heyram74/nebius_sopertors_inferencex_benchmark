@@ -1,0 +1,58 @@
+Run a single-node all_reduce_perf on worker-1 (NVLink):
+# nccl-tests version 2.17.9 nccl-headers=22807 nccl-library=22907
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 8 minBytes 536870912 maxBytes 8589934592 step: 2(factor) warmup iters: 1 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 105811 on   worker-1 device  0 [0000:8d:00] NVIDIA H200
+#  Rank  1 Group  0 Pid 105811 on   worker-1 device  1 [0000:91:00] NVIDIA H200
+#  Rank  2 Group  0 Pid 105811 on   worker-1 device  2 [0000:95:00] NVIDIA H200
+#  Rank  3 Group  0 Pid 105811 on   worker-1 device  3 [0000:99:00] NVIDIA H200
+#  Rank  4 Group  0 Pid 105811 on   worker-1 device  4 [0000:ab:00] NVIDIA H200
+#  Rank  5 Group  0 Pid 105811 on   worker-1 device  5 [0000:af:00] NVIDIA H200
+#  Rank  6 Group  0 Pid 105811 on   worker-1 device  6 [0000:b3:00] NVIDIA H200
+#  Rank  7 Group  0 Pid 105811 on   worker-1 device  7 [0000:b7:00] NVIDIA H200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+   536870912     134217728     float     sum      -1  2086.63  257.29  450.26       0  2087.48  257.19  450.08       0
+  1073741824     268435456     float     sum      -1  4012.90  267.57  468.25       0  4010.96  267.70  468.48       0
+  2147483648     536870912     float     sum      -1  7917.33  271.24  474.67       0  7916.28  271.27  474.73       0
+  4294967296    1073741824     float     sum      -1  15707.9  273.43  478.50       0  15724.0  273.15  478.01       0
+  8589934592    2147483648     float     sum      -1  31270.2  274.70  480.73       0  31298.6  274.45  480.29       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 470.398 
+#
+# Collective test concluded: all_reduce_perf
+#
+
+Run a single-node all_reduce_perf on worker-1 (Infiniband):
+# nccl-tests version 2.17.9 nccl-headers=22807 nccl-library=22907
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 8 minBytes 536870912 maxBytes 8589934592 step: 2(factor) warmup iters: 1 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 105886 on   worker-1 device  0 [0000:8d:00] NVIDIA H200
+#  Rank  1 Group  0 Pid 105886 on   worker-1 device  1 [0000:91:00] NVIDIA H200
+#  Rank  2 Group  0 Pid 105886 on   worker-1 device  2 [0000:95:00] NVIDIA H200
+#  Rank  3 Group  0 Pid 105886 on   worker-1 device  3 [0000:99:00] NVIDIA H200
+#  Rank  4 Group  0 Pid 105886 on   worker-1 device  4 [0000:ab:00] NVIDIA H200
+#  Rank  5 Group  0 Pid 105886 on   worker-1 device  5 [0000:af:00] NVIDIA H200
+#  Rank  6 Group  0 Pid 105886 on   worker-1 device  6 [0000:b3:00] NVIDIA H200
+#  Rank  7 Group  0 Pid 105886 on   worker-1 device  7 [0000:b7:00] NVIDIA H200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+   536870912     134217728     float     sum      -1  19665.1   27.30   47.78       0  19666.9   27.30   47.77       0
+  1073741824     268435456     float     sum      -1  39224.2   27.37   47.91       0  39374.2   27.27   47.72       0
+  2147483648     536870912     float     sum      -1  78203.3   27.46   48.06       0  78236.8   27.45   48.03       0
+  4294967296    1073741824     float     sum      -1   156125   27.51   48.14       0   156045   27.52   48.17       0
+  8589934592    2147483648     float     sum      -1   311368   27.59   48.28       0   311578   27.57   48.25       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 48.01 
+#
+# Collective test concluded: all_reduce_perf
+#
+

@@ -1,0 +1,50 @@
+Run a single-node all_reduce_perf on worker-0 (NVLink):
+# nccl-tests version 2.17.9 nccl-headers=22807 nccl-library=22907
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 4 minBytes 536870912 maxBytes 8589934592 step: 2(factor) warmup iters: 1 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 482361 on   worker-0 device  0 [0000:8d:00] NVIDIA H200
+#  Rank  1 Group  0 Pid 482361 on   worker-0 device  1 [0000:91:00] NVIDIA H200
+#  Rank  2 Group  0 Pid 482361 on   worker-0 device  2 [0000:95:00] NVIDIA H200
+#  Rank  3 Group  0 Pid 482361 on   worker-0 device  3 [0000:99:00] NVIDIA H200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+   536870912     134217728     float     sum      -1  2326.32  230.78  346.17       0  2323.75  231.04  346.55       0
+  1073741824     268435456     float     sum      -1  4536.70  236.68  355.02       0  4560.75  235.43  353.15       0
+  2147483648     536870912     float     sum      -1  8975.47  239.26  358.89       0  9010.38  238.33  357.50       0
+  4294967296    1073741824     float     sum      -1  17780.4  241.56  362.33       0  17812.4  241.12  361.68       0
+  8589934592    2147483648     float     sum      -1  35324.3  243.17  364.76       0  35329.4  243.14  364.71       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 357.077 
+#
+# Collective test concluded: all_reduce_perf
+#
+
+Run a single-node all_reduce_perf on worker-0 (Infiniband):
+# nccl-tests version 2.17.9 nccl-headers=22807 nccl-library=22907
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 4 minBytes 536870912 maxBytes 8589934592 step: 2(factor) warmup iters: 1 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 482416 on   worker-0 device  0 [0000:8d:00] NVIDIA H200
+#  Rank  1 Group  0 Pid 482416 on   worker-0 device  1 [0000:91:00] NVIDIA H200
+#  Rank  2 Group  0 Pid 482416 on   worker-0 device  2 [0000:95:00] NVIDIA H200
+#  Rank  3 Group  0 Pid 482416 on   worker-0 device  3 [0000:99:00] NVIDIA H200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+   536870912     134217728     float     sum      -1  17037.7   31.51   47.27       0  16990.3   31.60   47.40       0
+  1073741824     268435456     float     sum      -1  33678.9   31.88   47.82       0  33812.7   31.76   47.63       0
+  2147483648     536870912     float     sum      -1  66958.9   32.07   48.11       0  66863.4   32.12   48.18       0
+  4294967296    1073741824     float     sum      -1   133356   32.21   48.31       0   133191   32.25   48.37       0
+  8589934592    2147483648     float     sum      -1   265557   32.35   48.52       0   265604   32.34   48.51       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 48.0116 
+#
+# Collective test concluded: all_reduce_perf
+#
+

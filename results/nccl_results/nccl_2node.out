@@ -1,0 +1,52 @@
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 2):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 6):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 0):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 1):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 3):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 4):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 5):
+Run a multi-node all_reduce_perf_mpi on worker-1 (rank 7):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 12):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 13):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 15):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 10):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 8):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 9):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 11):
+Run a multi-node all_reduce_perf_mpi on worker-0 (rank 14):
+# nccl-tests version 2.17.9 nccl-headers=22807 nccl-library=22907
+# Collective test starting: all_reduce_perf_mpi
+# nThread 1 nGpus 1 minBytes 536870912 maxBytes 8589934592 step: 2(factor) warmup iters: 1 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 107748 on   worker-1 device  0 [0000:8d:00] NVIDIA H200
+#  Rank  1 Group  0 Pid 107749 on   worker-1 device  1 [0000:91:00] NVIDIA H200
+#  Rank  2 Group  0 Pid 107750 on   worker-1 device  2 [0000:95:00] NVIDIA H200
+#  Rank  3 Group  0 Pid 107751 on   worker-1 device  3 [0000:99:00] NVIDIA H200
+#  Rank  4 Group  0 Pid 107752 on   worker-1 device  4 [0000:ab:00] NVIDIA H200
+#  Rank  5 Group  0 Pid 107753 on   worker-1 device  5 [0000:af:00] NVIDIA H200
+#  Rank  6 Group  0 Pid 107754 on   worker-1 device  6 [0000:b3:00] NVIDIA H200
+#  Rank  7 Group  0 Pid 107755 on   worker-1 device  7 [0000:b7:00] NVIDIA H200
+#  Rank  8 Group  0 Pid 482919 on   worker-0 device  0 [0000:8d:00] NVIDIA H200
+#  Rank  9 Group  0 Pid 482920 on   worker-0 device  1 [0000:91:00] NVIDIA H200
+#  Rank 10 Group  0 Pid 482921 on   worker-0 device  2 [0000:95:00] NVIDIA H200
+#  Rank 11 Group  0 Pid 482922 on   worker-0 device  3 [0000:99:00] NVIDIA H200
+#  Rank 12 Group  0 Pid 482923 on   worker-0 device  4 [0000:ab:00] NVIDIA H200
+#  Rank 13 Group  0 Pid 482924 on   worker-0 device  5 [0000:af:00] NVIDIA H200
+#  Rank 14 Group  0 Pid 482925 on   worker-0 device  6 [0000:b3:00] NVIDIA H200
+#  Rank 15 Group  0 Pid 482926 on   worker-0 device  7 [0000:b7:00] NVIDIA H200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+   536870912     134217728     float     sum      -1  2364.50  227.05  425.73       0  2350.39  228.42  428.28       0
+  1073741824     268435456     float     sum      -1  4421.99  242.82  455.29       0  4426.40  242.58  454.83       0
+  2147483648     536870912     float     sum      -1  8561.54  250.83  470.30       0  8581.02  250.26  469.24       0
+  4294967296    1073741824     float     sum      -1  16845.0  254.97  478.07       0  16835.4  255.12  478.34       0
+  8589934592    2147483648     float     sum      -1  33429.4  256.96  481.80       0  33351.9  257.55  482.91       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 462.479 
+#
+# Collective test concluded: all_reduce_perf_mpi
+#
+

@@ -1,0 +1,71 @@
+==================================================
+STARTING H200 TOPOLOGY & NCCL OPTIMIZATION CHECK
+Date: Thu Jun 11 07:31:36 UTC 2026
+Node Name: 
+==================================================
+
+[1/4] Checking Visible GPUs...
+index, name, memory.total [MiB]
+0, NVIDIA H200, 143771 MiB
+1, NVIDIA H200, 143771 MiB
+2, NVIDIA H200, 143771 MiB
+3, NVIDIA H200, 143771 MiB
+4, NVIDIA H200, 143771 MiB
+5, NVIDIA H200, 143771 MiB
+6, NVIDIA H200, 143771 MiB
+7, NVIDIA H200, 143771 MiB
+
+[2/4] Checking NVIDIA Topology Matrix...
+Looking for 'NVLink' or 'NV' connectivity between all 8 GPUs.
+	[4mGPU0	GPU1	GPU2	GPU3	GPU4	GPU5	GPU6	GPU7	NIC0	NIC1	NIC2	NIC3	NIC4	NIC5	NIC6	NIC7	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NV18	NV18	NV18	NV18	NV18	NV18	NV18	SYS	SYS	SYS	SYS	PIX	PHB	PHB	PHB	0-63	0		N/A
+GPU1	NV18	 X 	NV18	NV18	NV18	NV18	NV18	NV18	SYS	SYS	SYS	SYS	PHB	PIX	PHB	PHB	0-63	0		N/A
+GPU2	NV18	NV18	 X 	NV18	NV18	NV18	NV18	NV18	SYS	SYS	SYS	SYS	PHB	PHB	PIX	PHB	0-63	0		N/A
+GPU3	NV18	NV18	NV18	 X 	NV18	NV18	NV18	NV18	SYS	SYS	SYS	SYS	PHB	PHB	PHB	PIX	0-63	0		N/A
+GPU4	NV18	NV18	NV18	NV18	 X 	NV18	NV18	NV18	PIX	PHB	PHB	PHB	SYS	SYS	SYS	SYS	64-127	1		N/A
+GPU5	NV18	NV18	NV18	NV18	NV18	 X 	NV18	NV18	PHB	PIX	PHB	PHB	SYS	SYS	SYS	SYS	64-127	1		N/A
+GPU6	NV18	NV18	NV18	NV18	NV18	NV18	 X 	NV18	PHB	PHB	PIX	PHB	SYS	SYS	SYS	SYS	64-127	1		N/A
+GPU7	NV18	NV18	NV18	NV18	NV18	NV18	NV18	 X 	PHB	PHB	PHB	PIX	SYS	SYS	SYS	SYS	64-127	1		N/A
+NIC0	SYS	SYS	SYS	SYS	PIX	PHB	PHB	PHB	 X 	PHB	PHB	PHB	SYS	SYS	SYS	SYS				
+NIC1	SYS	SYS	SYS	SYS	PHB	PIX	PHB	PHB	PHB	 X 	PHB	PHB	SYS	SYS	SYS	SYS				
+NIC2	SYS	SYS	SYS	SYS	PHB	PHB	PIX	PHB	PHB	PHB	 X 	PHB	SYS	SYS	SYS	SYS				
+NIC3	SYS	SYS	SYS	SYS	PHB	PHB	PHB	PIX	PHB	PHB	PHB	 X 	SYS	SYS	SYS	SYS				
+NIC4	PIX	PHB	PHB	PHB	SYS	SYS	SYS	SYS	SYS	SYS	SYS	SYS	 X 	PHB	PHB	PHB				
+NIC5	PHB	PIX	PHB	PHB	SYS	SYS	SYS	SYS	SYS	SYS	SYS	SYS	PHB	 X 	PHB	PHB				
+NIC6	PHB	PHB	PIX	PHB	SYS	SYS	SYS	SYS	SYS	SYS	SYS	SYS	PHB	PHB	 X 	PHB				
+NIC7	PHB	PHB	PHB	PIX	SYS	SYS	SYS	SYS	SYS	SYS	SYS	SYS	PHB	PHB	PHB	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+  NIC1: mlx5_1
+  NIC2: mlx5_2
+  NIC3: mlx5_3
+  NIC4: mlx5_4
+  NIC5: mlx5_5
+  NIC6: mlx5_6
+  NIC7: mlx5_7
+
+
+[3/4] Setting NCCL and CUDA Optimization Variables...
+NCCL_BUFFSIZE=4194304
+NCCL_DEBUG=INFO
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+CUDA_DEVICE_MAX_CONNECTIONS=1
+NCCL_IB_DISABLE=1
+
+[4/4] Testing NCCL initialization via PyTorch...
+
+==================================================
+CHECK COMPLETE. Review log for 'SYS' or 'NODE' flags in step 2.
+==================================================
