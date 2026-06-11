@@ -57,7 +57,7 @@ export RUN_EVAL=false          # set true to also run lm-eval accuracy checks
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Where result JSONs will be written (must be writable inside the container).
-WORKSPACE="/home/results/gptoss_h200_vllm22.0_sweep22/$RESULT_FILENAME"
+WORKSPACE="/home/results/gptoss_h200_vllm22.0_sweep1/$RESULT_FILENAME"
 
 echo "==> Job $SLURM_JOB_ID on node $SLURMD_NODENAME"
 echo "    MODEL    : $MODEL"
